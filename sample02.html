@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      #charactor1 {
+        transform: translateX(200px) rotate(45deg);
+      }
+      #charactor2 {
+        transform: rotate(45deg) translateX(200px);
+      }
+
+      /* 回転軸を示すマーカー */
+      .origin {
+        transform: translate(50px, 100px);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>02. 変形操作の順序による違い</h1>
+
+    <h2>translate scaleの順</h2>
+    <p>
+      キャラの中心を軸に回転してから、右に平行移動する
+    </p>
+    <div class="stage">
+      <div class="charactor" id="charactor1"></div>
+      <div class="origin" id="origin1"></div>
+    </div>
+
+    <h2>scale translateの順</h2>
+    <p>
+      右に平行移動してから、最初にキャラの中心だった点を軸に回転する
+    </p>
+    <div class="stage">
+      <div class="charactor" id="charactor2"></div>
+      <div class="origin" id="origin2"></div>
+    </div>
+
+  </body>
+</html>

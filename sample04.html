@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      #charactor:hover {
+        animation: shake 1s 1 ease-in-out both;
+        transform-origin: center bottom;
+      }
+      @keyframes shake {
+        20% {
+          transform: rotate(30deg);
+        }
+        40% {
+          transform: rotate(-20deg);
+        }
+        60% {
+          transform: rotate(10deg);
+        }
+        80% {
+          transform: rotate(-5deg);
+        }
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+
+      /* 回転軸を示すマーカー */
+      .origin {
+        transform: translate(50px, 200px);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>04. transform-originで回転・拡大の中心点を設定</h1>
+    <p>
+      カーソルをキャラクターにホバーするとアニメーションが実行されます
+    </p>
+    <div class="stage">
+      <div class="charactor" id="charactor"></div>
+      <div class="origin" id="origin"></div>
+    </div>
+  </body>
+</html>

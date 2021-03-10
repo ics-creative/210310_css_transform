@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* 上にずらす */
+      .float {
+        transform: translateY(-100px);
+      }
+      /* 傾ける */
+      .tilt {
+        transform: skewX(30deg);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>落とし穴1: 設定したはずのtransformが効かない</h1>
+
+    <div class="stage">
+      <div class="charactor" id="charactor"></div>
+    </div>
+    <div class="control">
+      <div class="label">現在のクラス名</div>
+      <div class="view"><span id="classValue"></span></div>
+    </div>
+    <div class="control">
+      <div class="view">
+        <button id="btnFloat">上にずらす"float"クラスを追加</button>
+        <button id="btnTilt">傾ける"tilt"クラスを追加</button>
+        <button id="btnClear">追加したクラスを削除</button>
+      </div>
+    </div>
+
+    <script>
+      const chara = document.getElementById("charactor");
+      const btnFloat = document.getElementById("btnFloat");
+      const btnTilt = document.getElementById("btnTilt");
+      const btnClear = document.getElementById("btnClear");
+
+      const viewClassName = () => {
+        document.getElementById("classValue").textContent = chara.className;
+      }
+
+      // Floatボタンを押したらキャラに"float"クラスを追加
+      btnFloat.addEventListener("click", () => {
+        chara.classList.add("float");
+        viewClassName();
+      });
+      // Tiltボタンを押したらキャラに"tilt"クラスを追加
+      btnTilt.addEventListener("click", () => {
+        chara.classList.add("tilt");
+        viewClassName();
+      });
+      // Clearボタンを押したら追加したクラスを除去
+      btnClear.addEventListener("click", () => {
+        chara.classList.remove("float", "tilt");
+        viewClassName();
+      });
+      viewClassName();
+    </script>
+  </body>
+</html>

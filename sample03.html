@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      #charactor1 {
+        animation: 3s linear 1s infinite cyclic1;
+      }
+
+      @keyframes cyclic1 {
+        from {
+          transform: rotate(0deg) translateX(200px);
+        }
+        to {
+          transform: rotate(360deg) translateX(200px);
+        }
+      }
+
+      #charactor2 {
+        animation: 3s linear 1s infinite cyclic2;
+      }
+
+      @keyframes cyclic2 {
+        from {
+          transform: translateX(200px) rotate(0deg);
+        }
+        to {
+          transform: translateX(200px) rotate(360deg);
+        }
+      }
+
+
+      /* 回転軸を示すマーカー */
+      .origin {
+        transform: translate(50px, 100px);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>03. 変形順を利用した回転アニメーション</h1>
+
+    <h2>translate scaleの順</h2>
+    <div class="stage">
+      <div class="charactor" id="charactor1"></div>
+      <div class="origin" id="origin1"></div>
+    </div>
+
+    <h2>scale translateの順</h2>
+    <div class="stage">
+      <div class="charactor" id="charactor2"></div>
+      <div class="origin" id="origin2"></div>
+    </div>
+  </body>
+</html>

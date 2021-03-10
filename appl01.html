@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .charactor {
+        top: 0;
+        left: 0;
+      }
+      .wrapper {
+        position: absolute;
+        width: 100px;
+        height: 200px;
+      }
+
+      /* キャラ1の設定 */
+      #charactor1 {
+        transform: translate(100px, 100px) rotate(45deg) scale(1.5);
+        top: 200px;
+        left: 200px;
+      }
+
+      /* キャラ2の設定 */
+      .mover {
+        position: absolute;
+        transform: translate(100px, 100px);
+        top: 200px;
+        left: 200px;
+      }
+      .rotater {
+        position: absolute;
+        transform: rotate(45deg);
+      }
+      .scaler {
+        transform: scale(1.5);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>応用1: transformを入れ子にする</h1>
+
+    <h2>キャラ1：移動・回転・拡大をまとめて設定</h2>
+    <div class="stage">
+      <div class="charactor" id="charactor1"></div>
+    </div>
+
+    <h2>キャラ2：入れ子にして移動・回転・拡大をバラバラに設定</h2>
+    <div class="stage">
+      <div class="wrapper mover">
+        <div class="wrapper rotater">
+          <div class="charactor scaler"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

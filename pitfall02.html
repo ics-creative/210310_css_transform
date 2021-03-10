@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      #charactor1 {
+        transform: rotate(0deg);
+        transition: transform 1s;
+      }
+      #charactor1:hover {
+        /* 50px水平移動しながら一周回って欲しい */
+        transform: translateX(50px) rotate(360deg);
+      }
+
+      #charactor2 {
+        transform: rotate(-30deg) scale(2);
+        transition: transform 1s;
+      }
+      #charactor2:hover {
+        /* 拡大しながら、-30 → 180度まで時計回りに210度回って欲しい */
+        transform: scale(3) rotate(180deg);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>落とし穴2: アニメーションしたら回転が足りない</h1>
+
+    <p>ホバーしたら50px水平移動しながら一周回って欲しい</p>
+    <div class="stage">
+      <div class="charactor" id="charactor1"></div>
+    </div>
+
+    <p>ホバーしたら拡大しながら、-30 → 180度まで時計回りに210度回って欲しい</p>
+    <div class="stage">
+      <div class="charactor" id="charactor2"></div>
+    </div>
+
+  </body>
+</html>
